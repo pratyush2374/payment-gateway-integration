@@ -1,0 +1,358 @@
+/* App.css */
+.app {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Home.css */
+  .home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+  
+  .featured-section {
+    margin-bottom: 40px;
+  }
+  
+  .featured-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    margin-top: 40px;
+  }
+  
+  /* ProductCard.css */
+  .product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+  
+  .product-info {
+    padding: 20px;
+  }
+  
+  .product-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  
+  .price-section {
+    margin-bottom: 15px;
+  }
+  
+  .rupee {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .buy-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    opacity: 0.9;
+  }
+
+/* PaymentSuccess.css */
+.success-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f6f7ff 0%, #eef1ff 100%);
+  padding: 20px;
+}
+
+.success-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.success-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-icon {
+  margin-bottom: 30px;
+  position: relative;
+  height: 80px;
+}
+
+/* Updated Checkmark Styles */
+.checkmark {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.checkmark-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  transform: scale(0);
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+.checkmark-stem {
+  position: absolute;
+  width: 4px;
+  height: 33px;
+  background-color: #fff;
+  left: 38px;
+  top: 20px;
+  opacity: 0;
+  transform-origin: left top;
+  transform: scaleY(0) rotate(45deg);
+  animation: stem-animation 0.3s ease-out 0.4s forwards;
+}
+
+.checkmark-kick {
+  position: absolute;
+  width: 16px;
+  height: 4px;
+  background-color: #fff;
+  left: 24px;
+  top: 44px;
+  opacity: 0;
+  transform-origin: left center;
+  transform: scaleX(0) rotate(-45deg);
+  animation: kick-animation 0.3s ease-out 0.6s forwards;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes stem-animation {
+  0% {
+    transform: scaleY(0) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes kick-animation {
+  0% {
+    transform: scaleX(0) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1) rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+.success-title {
+  color: #2d3748;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  color: #718096;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.order-details {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #718096;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.detail-value.success {
+  color: #4CAF50;
+}
+
+.success-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.action-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.view-order {
+  background: #4CAF50;
+  color: white;
+}
+
+.view-order:hover {
+  background: #43a047;
+}
+
+.continue-shopping {
+  background: #f8fafc;
+  color: #2d3748;
+}
+
+.continue-shopping:hover {
+  background: #e2e8f0;
+}
+
+.support-info {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.support-info p {
+  margin-bottom: 5px;
+}
+
+.support-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.support-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .success-card {
+    padding: 30px 20px;
+  }
+
+  .success-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .success-title {
+    font-size: 1.75rem;
+  }
+}
